@@ -42,6 +42,7 @@
         XtraOpenFileDialog1 = New DevExpress.XtraEditors.XtraOpenFileDialog(components)
         StackPanel1 = New DevExpress.Utils.Layout.StackPanel()
         PanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         CType(ribbonControl1, ComponentModel.ISupportInitialize).BeginInit()
         CType(BackstageViewControl1, ComponentModel.ISupportInitialize).BeginInit()
         CType(StackPanel1, ComponentModel.ISupportInitialize).BeginInit()
@@ -54,14 +55,14 @@
         ribbonControl1.ApplicationButtonDropDownControl = BackstageViewControl1
         ribbonControl1.CaptionBarItemLinks.Add(SkinDropDownButtonItem1)
         ribbonControl1.ExpandCollapseItem.Id = 0
-        ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {SkinDropDownButtonItem1, ribbonControl1.ExpandCollapseItem, BarButtonItem1})
+        ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {SkinDropDownButtonItem1, ribbonControl1.ExpandCollapseItem, BarButtonItem1, BarButtonItem2})
         ribbonControl1.Location = New Point(0, 0)
-        ribbonControl1.MaxItemId = 3
+        ribbonControl1.MaxItemId = 4
         ribbonControl1.Name = "ribbonControl1"
         ribbonControl1.PageCategories.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageCategory() {RibbonPageCategory1})
         ribbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {ribbonPage1})
         ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013
-        ribbonControl1.Size = New Size(1125, 145)
+        ribbonControl1.Size = New Size(1111, 145)
         ' 
         ' BackstageViewControl1
         ' 
@@ -146,6 +147,7 @@
         ' ribbonPageGroup1
         ' 
         ribbonPageGroup1.ItemLinks.Add(BarButtonItem1)
+        ribbonPageGroup1.ItemLinks.Add(BarButtonItem2)
         ribbonPageGroup1.Name = "ribbonPageGroup1"
         ribbonPageGroup1.Text = "Cards"
         ' 
@@ -172,12 +174,20 @@
         PanelControl1.TabIndex = 0
         PanelControl1.Visible = False
         ' 
+        ' BarButtonItem2
+        ' 
+        BarButtonItem2.Caption = "Remove Card"
+        BarButtonItem2.Enabled = False
+        BarButtonItem2.Id = 3
+        BarButtonItem2.ImageOptions.SvgImage = CType(resources.GetObject("BarButtonItem2.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        BarButtonItem2.Name = "BarButtonItem2"
+        ' 
         ' WorldNexusEditor
         ' 
         Appearance.Options.UseFont = True
-        AutoScaleDimensions = New SizeF(6.0F, 13.0F)
+        AutoScaleDimensions = New SizeF(6F, 13F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1125, 516)
+        ClientSize = New Size(1111, 509)
         Controls.Add(StackPanel1)
         Controls.Add(BackstageViewControl1)
         Controls.Add(ribbonControl1)
@@ -213,5 +223,6 @@
     Friend WithEvents BackstageViewButtonItem2 As DevExpress.XtraBars.Ribbon.BackstageViewButtonItem
     Friend WithEvents StackPanel1 As DevExpress.Utils.Layout.StackPanel
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
 
 End Class
