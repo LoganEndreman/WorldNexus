@@ -33,7 +33,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.WorldNexus.Form1
+            Me.MainForm = Global.WorldNexus.WorldNexusEditor
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _

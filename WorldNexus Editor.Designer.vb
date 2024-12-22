@@ -32,6 +32,9 @@
         BackstageViewButtonItem1 = New DevExpress.XtraBars.Ribbon.BackstageViewButtonItem()
         SkinDropDownButtonItem1 = New DevExpress.XtraBars.SkinDropDownButtonItem()
         BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
+        BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
+        BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
+        BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
         RibbonPageCategory1 = New DevExpress.XtraBars.Ribbon.RibbonPageCategory()
         RibbonPage3 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -39,36 +42,42 @@
         RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         ribbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         ribbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         XtraOpenFileDialog1 = New DevExpress.XtraEditors.XtraOpenFileDialog(components)
         StackPanel1 = New DevExpress.Utils.Layout.StackPanel()
-        PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
+        BarManager1 = New DevExpress.XtraBars.BarManager(components)
+        barDockControlTop = New DevExpress.XtraBars.BarDockControl()
+        barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
+        barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
+        barDockControlRight = New DevExpress.XtraBars.BarDockControl()
+        BarListItem1 = New DevExpress.XtraBars.BarListItem()
+        BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
         CType(ribbonControl1, ComponentModel.ISupportInitialize).BeginInit()
         CType(BackstageViewControl1, ComponentModel.ISupportInitialize).BeginInit()
         CType(StackPanel1, ComponentModel.ISupportInitialize).BeginInit()
         StackPanel1.SuspendLayout()
-        CType(PanelControl1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(BarManager1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' ribbonControl1
         ' 
         ribbonControl1.ApplicationButtonDropDownControl = BackstageViewControl1
-        ribbonControl1.CaptionBarItemLinks.Add(SkinDropDownButtonItem1)
         ribbonControl1.ExpandCollapseItem.Id = 0
-        ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {SkinDropDownButtonItem1, ribbonControl1.ExpandCollapseItem, BarButtonItem1, BarButtonItem2})
+        ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {ribbonControl1.ExpandCollapseItem, SkinDropDownButtonItem1, BarButtonItem1, BarButtonItem2, BarButtonItem3, BarButtonItem4})
         ribbonControl1.Location = New Point(0, 0)
-        ribbonControl1.MaxItemId = 4
+        ribbonControl1.MaxItemId = 8
         ribbonControl1.Name = "ribbonControl1"
         ribbonControl1.PageCategories.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageCategory() {RibbonPageCategory1})
         ribbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {ribbonPage1})
+        ribbonControl1.QuickToolbarItemLinks.Add(SkinDropDownButtonItem1)
         ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013
-        ribbonControl1.Size = New Size(1111, 145)
+        ribbonControl1.Size = New Size(1167, 145)
         ' 
         ' BackstageViewControl1
         ' 
         BackstageViewControl1.Items.Add(BackstageViewButtonItem2)
         BackstageViewControl1.Items.Add(BackstageViewButtonItem1)
-        BackstageViewControl1.Location = New Point(859, 309)
+        BackstageViewControl1.Location = New Point(318, 12)
         BackstageViewControl1.Name = "BackstageViewControl1"
         BackstageViewControl1.OwnerControl = ribbonControl1
         BackstageViewControl1.Size = New Size(480, 258)
@@ -101,9 +110,30 @@
         BarButtonItem1.Hint = "This creates a card."
         BarButtonItem1.Id = 1
         BarButtonItem1.ImageOptions.SvgImage = CType(resources.GetObject("BarButtonItem1.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        BarButtonItem1.ItemAppearance.Normal.Font = New Font("Yu Gothic UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        BarButtonItem1.ItemAppearance.Normal.Options.UseFont = True
         BarButtonItem1.Name = "BarButtonItem1"
+        ' 
+        ' BarButtonItem2
+        ' 
+        BarButtonItem2.Caption = "Remove Card"
+        BarButtonItem2.Enabled = False
+        BarButtonItem2.Id = 3
+        BarButtonItem2.ImageOptions.SvgImage = CType(resources.GetObject("BarButtonItem2.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        BarButtonItem2.Name = "BarButtonItem2"
+        ' 
+        ' BarButtonItem3
+        ' 
+        BarButtonItem3.Caption = "Create a Deck"
+        BarButtonItem3.Id = 6
+        BarButtonItem3.ImageOptions.SvgImage = CType(resources.GetObject("BarButtonItem3.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        BarButtonItem3.Name = "BarButtonItem3"
+        ' 
+        ' BarButtonItem4
+        ' 
+        BarButtonItem4.Caption = "Remove a Deck"
+        BarButtonItem4.Enabled = False
+        BarButtonItem4.Id = 7
+        BarButtonItem4.ImageOptions.SvgImage = CType(resources.GetObject("BarButtonItem4.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        BarButtonItem4.Name = "BarButtonItem4"
         ' 
         ' RibbonPageCategory1
         ' 
@@ -140,7 +170,7 @@
         ' 
         ribbonPage1.Appearance.Font = New Font("Yu Gothic UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         ribbonPage1.Appearance.Options.UseFont = True
-        ribbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {ribbonPageGroup1})
+        ribbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {ribbonPageGroup1, RibbonPageGroup4})
         ribbonPage1.Name = "ribbonPage1"
         ribbonPage1.Text = "Cards and Decks"
         ' 
@@ -151,46 +181,93 @@
         ribbonPageGroup1.Name = "ribbonPageGroup1"
         ribbonPageGroup1.Text = "Cards"
         ' 
+        ' RibbonPageGroup4
+        ' 
+        RibbonPageGroup4.ItemLinks.Add(BarButtonItem3)
+        RibbonPageGroup4.ItemLinks.Add(BarButtonItem4)
+        RibbonPageGroup4.Name = "RibbonPageGroup4"
+        RibbonPageGroup4.Text = "Decks"
+        ' 
         ' XtraOpenFileDialog1
         ' 
         XtraOpenFileDialog1.Title = "Open TXT Story"
         ' 
         ' StackPanel1
         ' 
-        StackPanel1.Controls.Add(PanelControl1)
+        StackPanel1.Controls.Add(BackstageViewControl1)
         StackPanel1.LayoutDirection = DevExpress.Utils.Layout.StackPanelLayoutDirection.TopDown
-        StackPanel1.Location = New Point(22, 207)
+        StackPanel1.Location = New Point(26, 169)
         StackPanel1.Name = "StackPanel1"
         StackPanel1.Size = New Size(1117, 354)
         StackPanel1.TabIndex = 3
         StackPanel1.UseSkinIndents = True
         ' 
-        ' PanelControl1
+        ' BarManager1
         ' 
-        PanelControl1.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        PanelControl1.Location = New Point(13, 12)
-        PanelControl1.Name = "PanelControl1"
-        PanelControl1.Size = New Size(1090, 199)
-        PanelControl1.TabIndex = 0
-        PanelControl1.Visible = False
+        BarManager1.DockControls.Add(barDockControlTop)
+        BarManager1.DockControls.Add(barDockControlBottom)
+        BarManager1.DockControls.Add(barDockControlLeft)
+        BarManager1.DockControls.Add(barDockControlRight)
+        BarManager1.Form = Me
+        BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {BarListItem1, BarButtonItem5})
+        BarManager1.MaxItemId = 2
         ' 
-        ' BarButtonItem2
+        ' barDockControlTop
         ' 
-        BarButtonItem2.Caption = "Remove Card"
-        BarButtonItem2.Enabled = False
-        BarButtonItem2.Id = 3
-        BarButtonItem2.ImageOptions.SvgImage = CType(resources.GetObject("BarButtonItem2.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        BarButtonItem2.Name = "BarButtonItem2"
+        barDockControlTop.CausesValidation = False
+        barDockControlTop.Dock = DockStyle.Top
+        barDockControlTop.Location = New Point(0, 0)
+        barDockControlTop.Manager = BarManager1
+        barDockControlTop.Size = New Size(1167, 0)
+        ' 
+        ' barDockControlBottom
+        ' 
+        barDockControlBottom.CausesValidation = False
+        barDockControlBottom.Dock = DockStyle.Bottom
+        barDockControlBottom.Location = New Point(0, 560)
+        barDockControlBottom.Manager = BarManager1
+        barDockControlBottom.Size = New Size(1167, 0)
+        ' 
+        ' barDockControlLeft
+        ' 
+        barDockControlLeft.CausesValidation = False
+        barDockControlLeft.Dock = DockStyle.Left
+        barDockControlLeft.Location = New Point(0, 0)
+        barDockControlLeft.Manager = BarManager1
+        barDockControlLeft.Size = New Size(0, 560)
+        ' 
+        ' barDockControlRight
+        ' 
+        barDockControlRight.CausesValidation = False
+        barDockControlRight.Dock = DockStyle.Right
+        barDockControlRight.Location = New Point(1167, 0)
+        barDockControlRight.Manager = BarManager1
+        barDockControlRight.Size = New Size(0, 560)
+        ' 
+        ' BarListItem1
+        ' 
+        BarListItem1.Caption = "BarListItem1"
+        BarListItem1.Id = 0
+        BarListItem1.Name = "BarListItem1"
+        ' 
+        ' BarButtonItem5
+        ' 
+        BarButtonItem5.Caption = "BarButtonItem1"
+        BarButtonItem5.Id = 1
+        BarButtonItem5.Name = "BarButtonItem5"
         ' 
         ' WorldNexusEditor
         ' 
         Appearance.Options.UseFont = True
         AutoScaleDimensions = New SizeF(6F, 13F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1111, 509)
+        ClientSize = New Size(1167, 560)
         Controls.Add(StackPanel1)
-        Controls.Add(BackstageViewControl1)
         Controls.Add(ribbonControl1)
+        Controls.Add(barDockControlLeft)
+        Controls.Add(barDockControlRight)
+        Controls.Add(barDockControlBottom)
+        Controls.Add(barDockControlTop)
         Font = New Font("Yu Gothic UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Name = "WorldNexusEditor"
         Ribbon = ribbonControl1
@@ -199,7 +276,7 @@
         CType(BackstageViewControl1, ComponentModel.ISupportInitialize).EndInit()
         CType(StackPanel1, ComponentModel.ISupportInitialize).EndInit()
         StackPanel1.ResumeLayout(False)
-        CType(PanelControl1, ComponentModel.ISupportInitialize).EndInit()
+        CType(BarManager1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
 
@@ -222,7 +299,16 @@
     Friend WithEvents BackstageViewButtonItem1 As DevExpress.XtraBars.Ribbon.BackstageViewButtonItem
     Friend WithEvents BackstageViewButtonItem2 As DevExpress.XtraBars.Ribbon.BackstageViewButtonItem
     Friend WithEvents StackPanel1 As DevExpress.Utils.Layout.StackPanel
-    Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem4 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup4 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents BarManager1 As DevExpress.XtraBars.BarManager
+    Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents BarListItem1 As DevExpress.XtraBars.BarListItem
+    Friend WithEvents BarButtonItem5 As DevExpress.XtraBars.BarButtonItem
 
 End Class
